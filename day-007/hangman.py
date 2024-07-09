@@ -1,63 +1,10 @@
 #Step 1
 import random
+import hangman_art
+import word_list
 
-word_list = ["aardvark", "baboon", "camel"]
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+word_list = word_list.word_list
+stages = hangman_art.stages
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
@@ -68,6 +15,7 @@ letter = random.choice(word_list)
 largo = len(letter)
 [output_letter.append("_") for l in range(0, largo)]
 print(output_letter)
+print(hangman_art.hangman)
 lives = 6
 while output_letter.count("_") != 0 and lives > 0:
       letra = input('Ingrese una letra!\n').lower()
