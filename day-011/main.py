@@ -71,7 +71,7 @@ play = True
 #Constructor
 
 def random_cards():
-    return [random.choice(cards),random.choice(cards)]
+    return random.choice(cards)
 
 def print_out(user_card,house_card,winer):
     print(f"Your cards are {user_card}, current score : {sum(user_card)}")
@@ -82,8 +82,10 @@ def print_out(user_card,house_card,winer):
 
 def play_bj():
     new_card = True
-    user_card = random_cards()
-    house_card = random_cards()
+    for _ in range(2):
+        user_card = random_cards()
+        house_card = random_cards()
+        
     if sum(user_card)==21:
         print_out(user_card,house_card,"User")
     elif sum(house_card) == 21:
@@ -97,6 +99,10 @@ def play_bj():
             card_plus = input("Type 'y' to get another card, type 'n' to pass ")
             if card_plus == 'n':
                 user_total = sum(user_card)
+                house_total = sum(house_card)
+                if user_total > 21:
+
+
 
 
 
