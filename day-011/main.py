@@ -80,12 +80,17 @@ def print_out(user_card,house_card,winer):
 
 
 
+
+
+
+
+
 def play_bj():
     new_card = True
     for _ in range(2):
         user_card = random_cards()
         house_card = random_cards()
-        
+
     if sum(user_card)==21:
         print_out(user_card,house_card,"User")
     elif sum(house_card) == 21:
